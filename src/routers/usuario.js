@@ -32,9 +32,9 @@ router.put("/api/usuario/:dni", (req, res) => {
   );
 });
 
-router.delete("/api/usuario/:id", (req, res) => {
+router.delete("/api/usuario/:dni", (req, res) => {
   const { dni } = req.params;
-  connection.query("CALL SP_elimminar_usuario(?)", [dni], (err, rows) => {
+  connection.query("CALL SP_eliminar_usuario(?)", [dni], (err, rows) => {
     rows ? res.json("eliminado correctamente") : res.json(err);
   });
 });
