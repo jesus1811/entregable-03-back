@@ -51,7 +51,7 @@ router.put("/api/nota/:id", (req, res) => {
 router.delete("/api/nota/:id", (req, res) => {
   const { id } = req.params;
   connection.query("CALL SP_eliminar_nota(?)", [id], (err, rows) => {
-    rows ? res.json("eliminado correctaemente") : res.json(err);
+    rows ? res.json("eliminado correctamente") : res.json(err);
   });
 });
 module.exports = router;
