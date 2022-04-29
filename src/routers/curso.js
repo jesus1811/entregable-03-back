@@ -4,7 +4,7 @@ const connection = require("../settings/database");
 
 router.get("/api/curso", (req, res) => {
   connection.query("CALL SP_listar_curso()", (err, rows) => {
-    rows ? res.json(rows[0]) : res.json(err);
+    rows ? res.json(rows) : res.json(err);
   });
 });
 
