@@ -139,6 +139,14 @@ _urlFoto varchar(500)
 )
 INSERT INTO Cliente(DNI,nombreCliente,apellidoCliente,correoCliente,passwordCliente,celularCliente,urlFoto,estado) VALUES (_DNI,_nombreCliente,_apellidoCliente,_correoCliente,_passwordCliente,_celularCliente,_urlFoto,1);
 /*Profesionales*/
+CREATE PROCEDURE SP_validar_profesional(
+_correoProfesional varchar(50),
+_password varchar(50)
+)
+SELECT idProfesional,DNI,nombreProfesional,apellidoProfesional,correoProfesional,celularProfesional,nombrePais FROM Profesional 
+INNER JOIN Pais on Profesional.idPais = Pais.idPais
+WHERE correoProfesional=_correoProfesional AND password=_password;
+
 CREATE PROCEDURE SP_listar_profesionales()
 SELECT DNI,nombreProfesional,apellidoProfesional,correoProfesional,celularProfesional,nombrePais,direccionDomicilio from Profesional
 INNER JOIN Pais on Profesional.idPais = Pais.idPais where estado=1;
@@ -149,6 +157,17 @@ SELECT NombreServicio,NombreTipoServicio,foto,precio,nombreProfesional,apellidoP
 INNER JOIN TipoServicio on Servicio.idTipoServicio = TipoServicio.idTipoServicio
 INNER JOIN Profesional on Servicio.idProfesional = Profesional.idProfesional
 INNER JOIN Pais on Profesional.idPais = Pais.idPais;
+
+CREATE PROCEDURE SP_registrar_servicio(
+_NombreServicio varchar(50),
+_idTipoServicio int,
+_precio float,
+_idProfesional int,
+_foto varchar(500)
+)
+INSERT INTO Servicio (NombreServicio,idTipoServicio,precio,idProfesional,foto,estado)
+VALUES(_NombreServicio,_idTipoServicio,_precio,_idProfesional,_foto,1);
+
 
 CREATE PROCEDURE SP_listar_tipoServicio()
 SELECT * from TipoServicio;
