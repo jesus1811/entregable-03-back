@@ -172,4 +172,12 @@ VALUES(_NombreServicio,_idTipoServicio,_precio,_idProfesional,_foto,1);
 CREATE PROCEDURE SP_listar_tipoServicio()
 SELECT * from TipoServicio;
 
+CREATE PROCEDURE SP_listar_servicioId(
+_idProfesional int
+)
+SELECT NombreServicio,NombreTipoServicio,foto,precio,nombreProfesional,apellidoProfesional,nombrePais FROM Servicio
+INNER JOIN TipoServicio on Servicio.idTipoServicio = TipoServicio.idTipoServicio
+INNER JOIN Profesional on Servicio.idProfesional = Profesional.idProfesional
+INNER JOIN Pais on Profesional.idPais = Pais.idPais WHERE Profesional.idProfesional=_idProfesional;
+
 ```
