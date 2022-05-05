@@ -1,16 +1,21 @@
-const express = require("express");
+// const express = require("express");
+import express from "express";
+import cors from "cors";
+import cliente from "./routers/cliente.js";
+import servicio from "./routers/servicio.js";
+import tipoServicio from "./routers/tipoServicio.js";
+import profesional from "./routers/profesional.js";
 const app = express();
-const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 
-app.use(require("./routers/cliente"));
-app.use(require("./routers/servicio"));
-app.use(require("./routers/tipoServicio"));
-app.use(require("./routers/profesional"));
+app.use(cliente);
+app.use(servicio);
+app.use(tipoServicio);
+app.use(profesional);
 
 app.get("/", (req, res) => {
   res.json("hello word");
 });
 
-module.exports = app;
+export default app;

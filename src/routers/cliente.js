@@ -1,16 +1,19 @@
-const express = require("express");
-const router = express.Router();
-const connection = require("../settings/database");
+import { Router } from "express";
+import connection from "../settings/database.js";
+const router = Router();
 
 router.post("/api/login", (req, res) => {
   const { email, password } = req.body;
-  connection.query(
-    "CALL SP_validar_cliente(?,?)",
-    [email, password],
-    (err, rows) => {
-      rows ? res.json(rows[0]) : res.json(err);
-    }
-  );
+  if (email == null && password == null) {
+    return res.status(400).json("los campos estan vacios");
+  } else if (email == null) {
+    return res.status(400).json("el campo email esta vacio");
+  } else if (password == null) {
+    return res.status(400).json("el campo password esta vacio");
+  }
+  connection.query("CALL SP_validar_cliente(?,?)", [email, password], (err, rows) => {
+    rows ? res.status(200).json(rows[0]) : res.status(500).json(err);
+  });
 });
 router.post("/api/cliente", (req, res) => {
   const { dni, nombre, apellido, correo, password, celular, foto } = req.body;
@@ -25,13 +28,9 @@ router.post("/api/cliente", (req, res) => {
 router.put("/api/cliente/:id", (req, res) => {
   const { id } = req.params;
   const { password } = req.body;
-  connection.query(
-    "CALL SP_editar_contraseña(?,?)",
-    [id, password],
-    (err, rows) => {
-      rows ? res.json("Contraseña editado correctamente") : res.json(err);
-    }
-  );
+  connection.query("CALL SP_editar_contraseña(?,?)", [id, password], (err, rows) => {
+    rows ? res.json("Contraseña editado correctamente") : res.json(err);
+  });
 });
 
-module.exports = router;
+export default router;

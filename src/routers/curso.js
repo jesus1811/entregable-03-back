@@ -1,6 +1,6 @@
-const express = require("express");
-const router = express.Router();
-const connection = require("../settings/database");
+import { Router } from "express";
+import connection from "../settings/database.js";
+const router = Router();
 
 router.get("/api/curso", (req, res) => {
   connection.query("CALL SP_listar_curso()", (err, rows) => {
@@ -18,13 +18,9 @@ router.post("/api/curso", (req, res) => {
 router.put("/api/curso/:id", (req, res) => {
   const { id } = req.params;
   const { nombre } = req.body;
-  connection.query(
-    "CALL SP_actualizar_curso(?,?)",
-    [id, nombre],
-    (err, rows) => {
-      rows ? res.json("actualizado correctamente") : res.json(err);
-    }
-  );
+  connection.query("CALL SP_actualizar_curso(?,?)", [id, nombre], (err, rows) => {
+    rows ? res.json("actualizado correctamente") : res.json(err);
+  });
 });
 
 router.delete("/api/curso/:id", (req, res) => {
@@ -33,4 +29,4 @@ router.delete("/api/curso/:id", (req, res) => {
     rows ? res.json("eliminado correctamente") : res.json(err);
   });
 });
-module.exports = router;
+export default router;

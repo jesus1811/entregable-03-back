@@ -1,6 +1,6 @@
-const express = require("express");
-const router = express.Router();
-const connection = require("../settings/database");
+import { Router } from "express";
+import connection from "../settings/database.js";
+const router = Router();
 
 router.get("/api/tipoServicio", (req, res) => {
   connection.query("CALL SP_listar_tipoServicio()", (err, rows) => {
@@ -8,4 +8,4 @@ router.get("/api/tipoServicio", (req, res) => {
   });
 });
 
-module.exports = router;
+export default router;
