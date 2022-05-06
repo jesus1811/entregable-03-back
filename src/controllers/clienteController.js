@@ -1,14 +1,7 @@
 import connection from "../settings/database.js";
 
-export const validarCliente = (req, res) => {
+export const validateCliente = (req, res) => {
   const { email, password } = req.body;
-  //   if (email == null && password == null) {
-  //     return res.status(400).json("los campos estan vacios");
-  //   } else if (email == null) {
-  //     return res.status(400).json("el campo email esta vacio");
-  //   } else if (password == null) {
-  //     return res.status(400).json("el campo password esta vacio");
-  //   }
   connection.query("CALL SP_validar_cliente(?,?)", [email, password], (err, rows) => {
     rows ? res.status(200).json(rows[0]) : res.status(500).json(err);
   });

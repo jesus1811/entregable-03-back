@@ -1,6 +1,6 @@
-CREATE DATABASE bd_montalvo;
+create database b8tnmbvalnva3ejnhh47;
 
-USE bd_montalvo;
+USE b8tnmbvalnva3ejnhh47;
 
 CREATE TABLE Pais (
     idPais int primary key auto_increment,
@@ -52,7 +52,7 @@ CREATE TABLE Servicio (
     precio float,
     idProfesional int,
     foreign key(idProfesional) references Profesional(idProfesional),
-    foto varchar(100),
+    foto varchar(500),
     estado int
 );
 
@@ -84,7 +84,7 @@ INSERT INTO
     TipoServicio(nombreTipoServicio, urlServicio)
 VALUES
 (
-        "Terapias",
+        "Asistencias terapeúticas",
         "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/terapias.png?alt=media&token=401ac6c7-aaf8-4f9a-87f8-4e44d97098d6"
     );
 
@@ -92,7 +92,7 @@ INSERT INTO
     TipoServicio(nombreTipoServicio, urlServicio)
 VALUES
 (
-        "Tegnologia",
+        "Capacitaciones tecnológicas",
         "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/tecnologias.png?alt=media&token=a6f98190-96ea-45b6-9771-3c58cd1c1f6c"
     );
 
@@ -100,14 +100,14 @@ INSERT INTO
     TipoServicio(nombreTipoServicio, urlServicio)
 VALUES
 (
-        "Educacion",
+        "Educación",
         "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/educacion.png?alt=media&token=8a485ba3-d8b2-4a6f-9f59-cc836a416c1a"
     );
 
 INSERT INTO
     Pais(nombrePais)
 VALUES
-    ("Peru");
+    ("Perú");
 
 INSERT INTO
     Pais(nombrePais)
@@ -127,7 +127,7 @@ VALUES
 INSERT INTO
     Pais(nombrePais)
 VALUES
-    ("venezuela");
+    ("Venezuela");
 
 INSERT INTO
     Profesional(
@@ -189,7 +189,40 @@ INSERT INTO
         estado
     )
 VALUES
-("terapia de piernas", 1, 45.5, 1, "url", 1);
+("Terapia Reumatologíca", 1, 55.5, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/reumatologia.png?alt=media&token=66db304e-b3ed-42b2-b467-2ffb2595094e", 1);
+INSERT INTO
+    Servicio(
+        NombreServicio,
+        idTipoServicio,
+        precio,
+        idProfesional,
+        foto,
+        estado
+    )
+VALUES
+("Terapia Dermatológica", 1, 39, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/dermatologia.png?alt=media&token=0d3b85d0-af8a-4cc6-8e1a-d6a533b88a0c", 1);
+INSERT INTO
+    Servicio(
+        NombreServicio,
+        idTipoServicio,
+        precio,
+        idProfesional,
+        foto,
+        estado
+    )
+VALUES
+("Terapia Geriátrica", 1, 35, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/geriatrica.png?alt=media&token=45d731d2-1712-4ed6-adc0-d96917b48502", 1);
+INSERT INTO
+    Servicio(
+        NombreServicio,
+        idTipoServicio,
+        precio,
+        idProfesional,
+        foto,
+        estado
+    )
+VALUES
+("Capacitación de redes", 2, 30, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/redes.jpg?alt=media&token=f14d176d-27d6-4a56-a05d-cde08c45780f", 1);
 
 INSERT INTO
     Servicio(
@@ -201,7 +234,7 @@ INSERT INTO
         estado
     )
 VALUES
-("Reparacion de computadora", 2, 30, 1, "url", 1);
+("Capacitación de programación basica", 2, 80, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/programacion.jpg?alt=media&token=3e579c20-c93c-42ac-bd2f-df2c597cff55", 1);
 
 INSERT INTO
     Servicio(
@@ -213,7 +246,7 @@ INSERT INTO
         estado
     )
 VALUES
-("terapia de brazos", 1, 50, 1, "url", 1);
+("Capacitación de base de datos", 2, 90, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/baseDeDatos.png?alt=media&token=de9421f0-e5b9-4270-922f-599e7837a87f", 1);
 
 INSERT INTO
     Servicio(
@@ -225,8 +258,31 @@ INSERT INTO
         estado
     )
 VALUES
-("formateo de pc", 2, 20, 2, "url", 1);
+("Curso de Marketing", 3, 50, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/marketing.png?alt=media&token=897ca5b9-8a4b-4fb9-80cb-9e5758636c64", 1);
 
+INSERT INTO
+    Servicio(
+        NombreServicio,
+        idTipoServicio,
+        precio,
+        idProfesional,
+        foto,
+        estado
+    )
+VALUES
+("Curso Empresarial", 3, 46, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/empresarial.png?alt=media&token=00435b4d-229c-47e1-95bc-90c6d75e9e39", 1);
+
+INSERT INTO
+    Servicio(
+        NombreServicio,
+        idTipoServicio,
+        precio,
+        idProfesional,
+        foto,
+        estado
+    )
+VALUES
+("Curso de Administración", 3, 53, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/administracion.PNG?alt=media&token=98bbbe87-741a-459d-9737-70c2b2eba840", 1);
 select
     *
 from
