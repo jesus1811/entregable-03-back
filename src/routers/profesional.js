@@ -1,12 +1,7 @@
 import { Router } from "express";
-import connection from "../settings/database.js";
+import { createProfesional } from "../controllers/profesionalController.js";
 const router = Router();
 
-router.post("/api/loginProfesional", (req, res) => {
-  const { email, password } = req.body;
-  connection.query("CALL SP_validar_profesional(?,?)", [email, password], (err, rows) => {
-    rows ? res.json(rows[0]) : res.json(err);
-  });
-});
+router.post("/api/loginProfesional", createProfesional);
 
 export default router;
