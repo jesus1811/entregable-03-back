@@ -47,6 +47,7 @@ CREATE TABLE Profesional(
 CREATE TABLE Servicio (
     idServicio int primary key auto_increment,
     NombreServicio varchar(50),
+    descripcion text,
     idTipoServicio int,
     foreign key (idTipoServicio) references TipoServicio(idTipoServicio),
     precio float,
@@ -75,11 +76,6 @@ CREATE TABLE Detalle(
 );
 
 /*datos predeterminados*/
-select
-    *
-from
-    Cliente;
-
 INSERT INTO
     TipoServicio(nombreTipoServicio, urlServicio)
 VALUES
@@ -182,6 +178,7 @@ VALUES
 INSERT INTO
     Servicio (
         NombreServicio,
+        descripcion,
         idTipoServicio,
         precio,
         idProfesional,
@@ -189,10 +186,11 @@ INSERT INTO
         estado
     )
 VALUES
-("Terapia Reumatologíca", 1, 55.5, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/reumatologia.png?alt=media&token=66db304e-b3ed-42b2-b467-2ffb2595094e", 1);
+("Terapia Reumatologíca","lorem lorem lorem lorem", 1, 55.5, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/reumatologia.png?alt=media&token=66db304e-b3ed-42b2-b467-2ffb2595094e", 1);
 INSERT INTO
     Servicio(
         NombreServicio,
+        descripcion,
         idTipoServicio,
         precio,
         idProfesional,
@@ -200,10 +198,11 @@ INSERT INTO
         estado
     )
 VALUES
-("Terapia Dermatológica", 1, 39, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/dermatologia.png?alt=media&token=0d3b85d0-af8a-4cc6-8e1a-d6a533b88a0c", 1);
+("Terapia Dermatológica","lorem lorem lorem lorem", 1, 39, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/dermatologia.png?alt=media&token=0d3b85d0-af8a-4cc6-8e1a-d6a533b88a0c", 1);
 INSERT INTO
     Servicio(
         NombreServicio,
+        descripcion,
         idTipoServicio,
         precio,
         idProfesional,
@@ -211,10 +210,11 @@ INSERT INTO
         estado
     )
 VALUES
-("Terapia Geriátrica", 1, 35, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/geriatrica.png?alt=media&token=45d731d2-1712-4ed6-adc0-d96917b48502", 1);
+("Terapia Geriátrica","lorem lorem lorem lorem", 1, 35, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/geriatrica.png?alt=media&token=45d731d2-1712-4ed6-adc0-d96917b48502", 1);
 INSERT INTO
     Servicio(
         NombreServicio,
+        descripcion,
         idTipoServicio,
         precio,
         idProfesional,
@@ -222,11 +222,12 @@ INSERT INTO
         estado
     )
 VALUES
-("Capacitación de redes", 2, 30, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/redes.jpg?alt=media&token=f14d176d-27d6-4a56-a05d-cde08c45780f", 1);
+("Capacitación de redes","lorem lorem lorem lorem", 2, 30, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/redes.jpg?alt=media&token=f14d176d-27d6-4a56-a05d-cde08c45780f", 1);
 
 INSERT INTO
     Servicio(
         NombreServicio,
+        descripcion,
         idTipoServicio,
         precio,
         idProfesional,
@@ -234,11 +235,12 @@ INSERT INTO
         estado
     )
 VALUES
-("Capacitación de programación basica", 2, 80, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/programacion.jpg?alt=media&token=3e579c20-c93c-42ac-bd2f-df2c597cff55", 1);
+("Capacitación de programación basica","lorem lorem lorem lorem", 2, 80, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/programacion.jpg?alt=media&token=3e579c20-c93c-42ac-bd2f-df2c597cff55", 1);
 
 INSERT INTO
     Servicio(
         NombreServicio,
+        descripcion,
         idTipoServicio,
         precio,
         idProfesional,
@@ -246,11 +248,12 @@ INSERT INTO
         estado
     )
 VALUES
-("Capacitación de base de datos", 2, 90, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/baseDeDatos.png?alt=media&token=de9421f0-e5b9-4270-922f-599e7837a87f", 1);
+("Capacitación de base de datos","lorem lorem lorem lorem", 2, 90, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/baseDeDatos.png?alt=media&token=de9421f0-e5b9-4270-922f-599e7837a87f", 1);
 
 INSERT INTO
     Servicio(
         NombreServicio,
+        descripcion,
         idTipoServicio,
         precio,
         idProfesional,
@@ -258,11 +261,12 @@ INSERT INTO
         estado
     )
 VALUES
-("Curso de Marketing", 3, 50, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/marketing.png?alt=media&token=897ca5b9-8a4b-4fb9-80cb-9e5758636c64", 1);
+("Curso de Marketing","lorem lorem lorem lorem", 3, 50, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/marketing.png?alt=media&token=897ca5b9-8a4b-4fb9-80cb-9e5758636c64", 1);
 
 INSERT INTO
     Servicio(
         NombreServicio,
+        descripcion,
         idTipoServicio,
         precio,
         idProfesional,
@@ -270,11 +274,12 @@ INSERT INTO
         estado
     )
 VALUES
-("Curso Empresarial", 3, 46, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/empresarial.png?alt=media&token=00435b4d-229c-47e1-95bc-90c6d75e9e39", 1);
+("Curso Empresarial","lorem lorem lorem lorem", 3, 46, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/empresarial.png?alt=media&token=00435b4d-229c-47e1-95bc-90c6d75e9e39", 1);
 
 INSERT INTO
     Servicio(
         NombreServicio,
+        descripcion,
         idTipoServicio,
         precio,
         idProfesional,
@@ -282,7 +287,7 @@ INSERT INTO
         estado
     )
 VALUES
-("Curso de Administración", 3, 53, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/administracion.PNG?alt=media&token=98bbbe87-741a-459d-9737-70c2b2eba840", 1);
+("Curso de Administración","lorem lorem lorem lorem", 3, 53, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/administracion.PNG?alt=media&token=98bbbe87-741a-459d-9737-70c2b2eba840", 1);
 select
     *
 from
@@ -383,8 +388,10 @@ where
 /*servicio*/
 CREATE PROCEDURE SP_listar_servicios()
 SELECT
+idServicio,
     NombreServicio,
     NombreTipoServicio,
+    descripcion,
     foto,
     precio,
     nombreProfesional,
@@ -422,10 +429,12 @@ VALUES
         1
     );
 
-CREATE PROCEDURE SP_listar_servicioId(_idProfesional int)
+CREATE PROCEDURE SP_listar_servicioId(_idServicio int)
 SELECT
+idServicio,
     NombreServicio,
     NombreTipoServicio,
+    descripcion,
     foto,
     precio,
     nombreProfesional,
@@ -435,9 +444,25 @@ FROM
     Servicio
     INNER JOIN TipoServicio on Servicio.idTipoServicio = TipoServicio.idTipoServicio
     INNER JOIN Profesional on Servicio.idProfesional = Profesional.idProfesional
-    INNER JOIN Pais on Profesional.idPais = Pais.idPais
-WHERE
-    Profesional.idProfesional = _idProfesional;
+    INNER JOIN Pais on Profesional.idPais = Pais.idPais where idServicio =_idServicio;
+CREATE PROCEDURE SP_listar_antecedentesServicios(
+_idProfesional int
+)
+SELECT
+idServicio,
+    NombreServicio,
+    NombreTipoServicio,
+    descripcion,
+    foto,
+    precio,
+    nombreProfesional,
+    apellidoProfesional,
+    nombrePais
+FROM
+    Servicio
+    INNER JOIN TipoServicio on Servicio.idTipoServicio = TipoServicio.idTipoServicio
+    INNER JOIN Profesional on Servicio.idProfesional = Profesional.idProfesional
+    INNER JOIN Pais on Profesional.idPais = Pais.idPais WHERE Profesional.idProfesional = _idProfesional;
 
 CREATE PROCEDURE SP_listar_tipoServicio()
 SELECT
