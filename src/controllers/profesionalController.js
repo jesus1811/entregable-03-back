@@ -6,3 +6,10 @@ export const createProfesional = (req, res) => {
     rows ? res.json(rows[0]) : res.json(err);
   });
 };
+
+export const getProfesional = (req, res) => {
+  const { idProfesional } = req.params;
+  connection.query("CALL SP_listar_profesionalId(?)", [idProfesional], (err, rows) => {
+    rows ? res.json(rows[0]) : res.json(err);
+  });
+};

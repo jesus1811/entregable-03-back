@@ -38,6 +38,7 @@ CREATE TABLE Profesional(
     correoProfesional varchar(50),
     password varchar(50),
     celularProfesional varchar(9),
+    urlFoto varchar(500),
     idPais int,
     foreign key (idPais) references Pais(idPais),
     direccionDomicilio varchar(50),
@@ -133,6 +134,7 @@ INSERT INTO
         correoProfesional,
         password,
         celularProfesional,
+        urlFoto,
         idPais,
         direccionDomicilio,
         estado
@@ -145,6 +147,7 @@ VALUES
         "jadhira123@gmail.com",
         "123456",
         "987654321",
+        "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/jadhira.jpg?alt=media&token=e514db0b-49e0-4930-8270-7de34996c923",
         1,
         "lima-caceres",
         1
@@ -158,6 +161,7 @@ INSERT INTO
         correoProfesional,
         password,
         celularProfesional,
+        urlFoto,
         idPais,
         direccionDomicilio,
         estado
@@ -170,6 +174,7 @@ VALUES
         "estafany123@gmail.com",
         "123456",
         "984564566",
+        "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/estefany.jpg?alt=media&token=71bcc817-b93d-44d4-89d9-d99ad42c18f5",
         1,
         "lima-caceres",
         1
@@ -186,7 +191,7 @@ INSERT INTO
         estado
     )
 VALUES
-("Terapia Reumatologíca","lorem lorem lorem lorem", 1, 55.5, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/reumatologia.png?alt=media&token=66db304e-b3ed-42b2-b467-2ffb2595094e", 1);
+("Terapia Reumatologíca","lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem", 1, 55.5, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/reumatologia.png?alt=media&token=66db304e-b3ed-42b2-b467-2ffb2595094e", 1);
 INSERT INTO
     Servicio(
         NombreServicio,
@@ -198,7 +203,7 @@ INSERT INTO
         estado
     )
 VALUES
-("Terapia Dermatológica","lorem lorem lorem lorem", 1, 39, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/dermatologia.png?alt=media&token=0d3b85d0-af8a-4cc6-8e1a-d6a533b88a0c", 1);
+("Terapia Dermatológica","lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem", 1, 39, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/dermatologia.png?alt=media&token=0d3b85d0-af8a-4cc6-8e1a-d6a533b88a0c", 1);
 INSERT INTO
     Servicio(
         NombreServicio,
@@ -210,7 +215,7 @@ INSERT INTO
         estado
     )
 VALUES
-("Terapia Geriátrica","lorem lorem lorem lorem", 1, 35, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/geriatrica.png?alt=media&token=45d731d2-1712-4ed6-adc0-d96917b48502", 1);
+("Terapia Geriátrica","lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem", 1, 35, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/geriatrica.png?alt=media&token=45d731d2-1712-4ed6-adc0-d96917b48502", 1);
 INSERT INTO
     Servicio(
         NombreServicio,
@@ -222,7 +227,7 @@ INSERT INTO
         estado
     )
 VALUES
-("Capacitación de redes","lorem lorem lorem lorem", 2, 30, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/redes.jpg?alt=media&token=f14d176d-27d6-4a56-a05d-cde08c45780f", 1);
+("Capacitación de redes","lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem", 2, 30, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/redes.jpg?alt=media&token=f14d176d-27d6-4a56-a05d-cde08c45780f", 1);
 
 INSERT INTO
     Servicio(
@@ -235,7 +240,7 @@ INSERT INTO
         estado
     )
 VALUES
-("Capacitación de programación basica","lorem lorem lorem lorem", 2, 80, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/programacion.jpg?alt=media&token=3e579c20-c93c-42ac-bd2f-df2c597cff55", 1);
+("Capacitación de programación basica","lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem", 2, 80, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/programacion.jpg?alt=media&token=3e579c20-c93c-42ac-bd2f-df2c597cff55", 1);
 
 INSERT INTO
     Servicio(
@@ -248,7 +253,7 @@ INSERT INTO
         estado
     )
 VALUES
-("Capacitación de base de datos","lorem lorem lorem lorem", 2, 90, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/baseDeDatos.png?alt=media&token=de9421f0-e5b9-4270-922f-599e7837a87f", 1);
+("Capacitación de base de datos","lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem", 2, 90, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/baseDeDatos.png?alt=media&token=de9421f0-e5b9-4270-922f-599e7837a87f", 1);
 
 INSERT INTO
     Servicio(
@@ -261,7 +266,7 @@ INSERT INTO
         estado
     )
 VALUES
-("Curso de Marketing","lorem lorem lorem lorem", 3, 50, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/marketing.png?alt=media&token=897ca5b9-8a4b-4fb9-80cb-9e5758636c64", 1);
+("Curso de Marketing","lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem", 3, 50, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/marketing.png?alt=media&token=897ca5b9-8a4b-4fb9-80cb-9e5758636c64", 1);
 
 INSERT INTO
     Servicio(
@@ -274,7 +279,7 @@ INSERT INTO
         estado
     )
 VALUES
-("Curso Empresarial","lorem lorem lorem lorem", 3, 46, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/empresarial.png?alt=media&token=00435b4d-229c-47e1-95bc-90c6d75e9e39", 1);
+("Curso Empresarial","lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem", 3, 46, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/empresarial.png?alt=media&token=00435b4d-229c-47e1-95bc-90c6d75e9e39", 1);
 
 INSERT INTO
     Servicio(
@@ -287,7 +292,7 @@ INSERT INTO
         estado
     )
 VALUES
-("Curso de Administración","lorem lorem lorem lorem", 3, 53, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/administracion.PNG?alt=media&token=98bbbe87-741a-459d-9737-70c2b2eba840", 1);
+("Curso de Administración","lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem", 3, 53, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/administracion.PNG?alt=media&token=98bbbe87-741a-459d-9737-70c2b2eba840", 1);
 select
     *
 from
@@ -377,6 +382,7 @@ SELECT
     apellidoProfesional,
     correoProfesional,
     celularProfesional,
+    urlFoto,
     nombrePais,
     direccionDomicilio
 from
@@ -384,6 +390,22 @@ from
     INNER JOIN Pais on Profesional.idPais = Pais.idPais
 where
     estado = 1;
+    CREATE PROCEDURE SP_listar_profesionalId(_idProfesional int)
+    SELECT
+    DNI,
+    nombreProfesional,
+    apellidoProfesional,
+    correoProfesional,
+    celularProfesional,
+    urlFoto,
+    nombrePais,
+    direccionDomicilio
+from
+    Profesional
+    INNER JOIN Pais on Profesional.idPais = Pais.idPais
+where
+    estado = 1 and idProfesional = _idProfesional;
+    
 /*servicio*/
 CREATE PROCEDURE SP_listar_servicios()
 SELECT
@@ -462,7 +484,7 @@ FROM
     Servicio
     INNER JOIN TipoServicio on Servicio.idTipoServicio = TipoServicio.idTipoServicio
     INNER JOIN Profesional on Servicio.idProfesional = Profesional.idProfesional
-    INNER JOIN Pais on Profesional.idPais = Pais.idPais WHERE Profesional.idProfesional =1 _idProfesional;
+    INNER JOIN Pais on Profesional.idPais = Pais.idPais WHERE Profesional.idProfesional =_idProfesional;
 
 CREATE PROCEDURE SP_listar_tipoServicio()
 SELECT
