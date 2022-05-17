@@ -11,6 +11,12 @@ export const getServicio = (req, res) => {
     rows ? res.json(rows[0]) : res.json(err);
   });
 };
+export const getServicioForProfesional = (req, res) => {
+  const { idProfesional } = req.params;
+  connection.query("CALL SP_listar_antecedentesServicios(?)", [idProfesional], (err, rows) => {
+    rows ? res.json(rows[0]) : res.json(err);
+  });
+};
 export const postServicio = (req, res) => {
   const { nombre, tipo, precio, profesional, foto } = req.body;
   connection.query("CALL SP_registrar_servicio(?,?,?,?,?)", [nombre, tipo, precio, profesional, foto], (err, rows) => {

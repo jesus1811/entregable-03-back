@@ -384,7 +384,6 @@ from
     INNER JOIN Pais on Profesional.idPais = Pais.idPais
 where
     estado = 1;
-
 /*servicio*/
 CREATE PROCEDURE SP_listar_servicios()
 SELECT
@@ -437,6 +436,7 @@ idServicio,
     descripcion,
     foto,
     precio,
+    Profesional.idProfesional,
     nombreProfesional,
     apellidoProfesional,
     nombrePais
@@ -444,7 +444,7 @@ FROM
     Servicio
     INNER JOIN TipoServicio on Servicio.idTipoServicio = TipoServicio.idTipoServicio
     INNER JOIN Profesional on Servicio.idProfesional = Profesional.idProfesional
-    INNER JOIN Pais on Profesional.idPais = Pais.idPais where idServicio =_idServicio;
+    INNER JOIN Pais on Profesional.idPais = Pais.idPais where idServicio = _idServicio;
 CREATE PROCEDURE SP_listar_antecedentesServicios(
 _idProfesional int
 )
@@ -462,7 +462,7 @@ FROM
     Servicio
     INNER JOIN TipoServicio on Servicio.idTipoServicio = TipoServicio.idTipoServicio
     INNER JOIN Profesional on Servicio.idProfesional = Profesional.idProfesional
-    INNER JOIN Pais on Profesional.idPais = Pais.idPais WHERE Profesional.idProfesional = _idProfesional;
+    INNER JOIN Pais on Profesional.idPais = Pais.idPais WHERE Profesional.idProfesional =1 _idProfesional;
 
 CREATE PROCEDURE SP_listar_tipoServicio()
 SELECT
