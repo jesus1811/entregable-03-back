@@ -1,6 +1,5 @@
-create database b8tnmbvalnva3ejnhh47;
 
-USE b8tnmbvalnva3ejnhh47;
+USE practicas_remotas;
 
 CREATE TABLE Pais (
     idPais int primary key auto_increment,
@@ -215,7 +214,7 @@ INSERT INTO
         estado
     )
 VALUES
-("Terapia Geriátrica","lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem", 1, 35, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/geriatrica.png?alt=media&token=45d731d2-1712-4ed6-adc0-d96917b48502", 1);
+("Terapia Geriátrica","lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem", 1, 35, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/geriatrica.jpg?alt=media&token=45d731d2-1712-4ed6-adc0-d96917b48502", 1);
 INSERT INTO
     Servicio(
         NombreServicio,
@@ -292,7 +291,7 @@ INSERT INTO
         estado
     )
 VALUES
-("Curso de Administración","lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem", 3, 53, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/administracion.PNG?alt=media&token=98bbbe87-741a-459d-9737-70c2b2eba840", 1);
+("Curso de Administración","lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem", 3, 53, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/administracion.png?alt=media&token=98bbbe87-741a-459d-9737-70c2b2eba840", 1);
 select
     *
 from
@@ -415,6 +414,7 @@ idServicio,
     descripcion,
     foto,
     precio,
+    Profesional.idProfesional,
     nombreProfesional,
     apellidoProfesional,
     nombrePais
@@ -491,3 +491,4 @@ SELECT
     *
 from
     TipoServicio;
+SELECT * FROM Cliente;
