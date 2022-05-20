@@ -20,7 +20,7 @@ export const getServicioForProfesional = (req, res) => {
 export const postServicio = (req, res) => {
   const { nombre, descripcion, tipo, precio, profesional, foto } = req.body;
   connection.query(
-    "CALL SP_registrar_servicio(?,?,?,?,?)",
+    "CALL SP_registrar_servicio(?,?,?,?,?,?)",
     [nombre, descripcion, tipo, precio, profesional, foto],
     (err, rows) => {
       rows ? res.json("agregado correctamente") : res.json(err);
