@@ -18,8 +18,8 @@ export const createCliente = (req, res) => {
 };
 export const updateCliente = (req, res) => {
   const { id } = req.params;
-  const { password } = req.body;
-  connection.query("CALL SP_editar_contraseña(?,?)", [id, password], (err, rows) => {
-    rows ? res.json("Contraseña editado correctamente") : res.json(err);
+  const {nombre,apellido,correo, password,celular } = req.body;
+  connection.query("CALL SP_editar_cliente(?,?,?,?,?,?)", [id,nombre,apellido,correo,password,celular], (err, rows) => {
+    rows ? res.json("datos editado correctamente") : res.json(err);
   });
 };

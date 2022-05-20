@@ -349,14 +349,22 @@ VALUES
 
 /* store procedures*/
 /*cliente*/
-CREATE PROCEDURE SP_editar_contraseña(
+CREATE PROCEDURE SP_editar_cliente(
     _idCliente int,
-    _passwordCliente varchar(50)
+    _nombreCliente varchar(50),
+    _apellidoCliente varchar(50),
+    _correoCliente varchar(60),
+    _passwordCliente varchar(50),
+    _celularCliente char(9)
 )
 UPDATE
     Cliente
 SET
-    passwordCliente = _passwordCliente
+nombreCliente = _nombreCliente,
+apellidoCliente= _apellidoCliente,
+correoCliente =_correoCliente,
+passwordCliente = _passwordCliente,
+celularCliente =_celularCliente
 WHERE
     idCliente = _idCliente;
 
@@ -492,7 +500,7 @@ INSERT INTO
         foto,
         estado
     )
-VALUES
+VALUES 
 (
         _NombreServicio,
         _descripcion,
@@ -544,4 +552,4 @@ SELECT
     *
 from
     TipoServicio;
-    select * from Cliente;
+SELECT * FROM Cliente;
