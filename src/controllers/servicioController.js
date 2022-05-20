@@ -18,8 +18,12 @@ export const getServicioForProfesional = (req, res) => {
   });
 };
 export const postServicio = (req, res) => {
-  const { nombre, tipo, precio, profesional, foto } = req.body;
-  connection.query("CALL SP_registrar_servicio(?,?,?,?,?)", [nombre, tipo, precio, profesional, foto], (err, rows) => {
-    rows ? res.json("agregado correctamente") : res.json(err);
-  });
+  const { nombre, descripcion, tipo, precio, profesional, foto } = req.body;
+  connection.query(
+    "CALL SP_registrar_servicio(?,?,?,?,?)",
+    [nombre, descripcion, tipo, precio, profesional, foto],
+    (err, rows) => {
+      rows ? res.json("agregado correctamente") : res.json(err);
+    }
+  );
 };
