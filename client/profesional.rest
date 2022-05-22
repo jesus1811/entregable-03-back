@@ -1,0 +1,14 @@
+### valida si el correo y contraseña del profesional es correcta
+POST http://localhost:3001/api/loginProfesional
+Content-Type: application/json
+
+{
+    "email":"jadhira123@gmail.com",
+    "password":"123456"
+}
+
+### lista los datos de un profesional por su id
+GET http://localhost:3001/api/profesional/2
+
+### lista a todos los profesionales
+GET http://localhost:3001/api/profesional

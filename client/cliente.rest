@@ -1,0 +1,34 @@
+### valida si el correo y la contraseña del cliente es correcta
+POST http://localhost:3001/api/login
+Content-Type: application/json
+
+{
+    "email":"jayarza1811@gmail.com",
+    "password":"123456"
+}
+
+### registra a un cliente
+POST http://localhost:3001/api/cliente
+Content-Type: application/json
+
+{
+    "dni":"87654321",
+    "nombre":"Juan",
+    "apellido":"Perez",
+    "correo":"email123@gmail.com",
+    "password":"123456",
+    "celular":"123456789",
+    "foto":"lorem"
+}
+
+### edita los datos de un usuario
+PUT http://localhost:3001/api/cliente/1
+Content-Type: application/json
+
+{
+    "nombre":"edit",
+    "apellido":"apellido edit",
+    "correo":"email123@gmail.com edit",
+    "password":"cambio",
+    "celular":"123456789"
+}

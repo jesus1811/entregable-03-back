@@ -1,0 +1,22 @@
+### lista todos los servicios
+GET http://localhost:3001/api/servicio
+
+### lista el detalle de un servicio por su id
+GET  http://localhost:3001/api/servicio/1
+
+### lista todos los servicios de un profesional
+GET http://localhost:3001/api/serviciosForProfesional/1
+
+### registra un servicio
+POST http://localhost:3001/api/servicio
+Content-Type: application/json
+
+{
+    "nombre":"pruebaback",
+    "descripcion":"curso en linea de ingles de prueba",
+    "tipo":3,
+    "precio":1.1,
+    "profesional":3,
+    "foto":"urlpruebaback"
+}
+

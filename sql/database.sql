@@ -379,7 +379,6 @@ FROM
 WHERE
     correoCliente = _correoCliente
     AND passwordCliente = _passwordCliente;
-
 CREATE PROCEDURE SP_registrar_cliente(
     _DNI varchar(8),
     _nombreCliente varchar(50),
@@ -431,7 +430,6 @@ FROM
 WHERE
     correoProfesional = _correoProfesional
     AND password = _password;
-
 CREATE PROCEDURE SP_listar_profesionales()
 SELECT
     DNI,

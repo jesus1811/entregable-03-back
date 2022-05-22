@@ -1,0 +1,2 @@
+### lista todos los tipos de servicios
+GET http://localhost:3001/api/tipoServicio
