@@ -29,3 +29,17 @@ Content-Type: application/json
     "domicilio":"domicilioTest"
 
 }
+
+### edita los datos de un profesional
+PUT http://localhost:3001/api/profesional/2
+Content-Type: application/json
+
+{
+    "nombre":"nombreEdit", 
+    "apellido":"apellidoEdit",
+    "correo":"correoEdit@gmail.com",
+    "password":"654321",
+    "celular":"234567789",
+    "pais":3,
+    "domicilio":"domicilioEdit"
+}

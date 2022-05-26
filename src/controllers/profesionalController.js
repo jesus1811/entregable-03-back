@@ -30,3 +30,14 @@ export const postProfesional = (req, res) => {
     }
   );
 };
+export const putProfesional = (req, res) => {
+  const { id } = req.params;
+  const { nombre, apellido, correo, password, celular, pais, domicilio } = req.body;
+  connection.query(
+    "CALL SP_editar_Profesional(?,?,?,?,?,?,?,?)",
+    [id, nombre, apellido, correo, password, celular, pais, domicilio],
+    (err, rows) => {
+      rows ? res.json("Editado Correctamente") : res.json(err);
+    }
+  );
+};
