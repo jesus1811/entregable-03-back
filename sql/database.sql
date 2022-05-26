@@ -349,6 +349,65 @@ VALUES
 
 /* store procedures*/
 /*cliente*/
+CREATE PROCEDURE SP_editar_Profesional(
+    _idProfesional int,
+    _nombreProfesional varchar(50),
+    _apellidoProfesional varchar(50),
+    _correoProfesional varchar(50),
+    _password varchar(50),
+    _celularProfesional varchar(9),
+    _idPais int,
+    _direccionDomicilio varchar(500)  
+)
+UPDATE
+    Profesional
+SET
+    nombreProfesional = _nombreProfesional,
+    apellidoProfesional = _apellidoProfesional,
+    correoProfesional = _correoProfesional,
+    password = _password,
+    celularProfesional = _celularProfesional,
+    idPais = _idPais,
+    direccionDomicilio = _direccionDomicilio
+WHERE
+    idProfesional = _idProfesional;
+    CREATE PROCEDURE SP_registrar_profesional(
+    _DNI varchar(8),
+    _nombreProfesional varchar(50),
+    _apellidoProfesional varchar(50),
+    _correoProfesional varchar(50),
+    _password varchar(50),
+    _celularProfesional varchar(9),
+    _urlFoto varchar(500),
+    _idPais int,
+    _direccionDomicilio varchar(500)    
+)
+INSERT INTO
+    Profesional(
+        DNI,
+        nombreProfesional,
+        apellidoProfesional,
+        correoProfesional,
+        password,
+        celularProfesional,
+        urlFoto,
+        idPais,
+        direccionDomicilio,
+        estado
+    )
+VALUES
+    (
+		_DNI,
+		_nombreProfesional,
+		_apellidoProfesional,
+		_correoProfesional,
+		_password,
+		_celularProfesional,
+		_urlFoto,
+		_idPais,
+		_direccionDomicilio,
+        1
+    );
 CREATE PROCEDURE SP_editar_cliente(
     _idCliente int,
     _nombreCliente varchar(50),

@@ -12,3 +12,20 @@ GET http://localhost:3001/api/profesional/2
 
 ### lista a todos los profesionales
 GET http://localhost:3001/api/profesional
+
+### agrega un profesional 
+POST http://localhost:3001/api/profesional
+Content-Type: application/json
+
+{
+    "dni":"54535678",
+    "nombre":"nombreTest",
+    "apellido":"apellidoTest",
+    "correo":"test123@gmail.com",
+    "password":"123456",
+    "celular":"876546778",
+    "foto":"urlTest",
+    "pais":1,
+    "domicilio":"domicilioTest"
+
+}

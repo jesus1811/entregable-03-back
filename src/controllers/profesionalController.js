@@ -20,3 +20,13 @@ export const getProfesionales = (req, res) => {
     rows ? res.json(rows[0]) : res.json(err);
   });
 };
+export const postProfesional = (req, res) => {
+  const { dni, nombre, apellido, correo, password, celular, foto, pais, domicilio } = req.body;
+  connection.query(
+    "CALL SP_registrar_profesional(?,?,?,?,?,?,?,?,?)",
+    [dni, nombre, apellido, correo, password, celular, foto, pais, domicilio],
+    (err, rows) => {
+      rows ? res.json("Agregado Correctamente") : res.json(err);
+    }
+  );
+};
