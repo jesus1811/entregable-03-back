@@ -1,0 +1,2 @@
+### listar comprobante por id profesional
+GET http://localhost:3001/api/comprobantes/1
