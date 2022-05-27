@@ -359,7 +359,11 @@ INSERT INTO Detalle(idComprobanteElectronico,idServicio) values (1,1);
 INSERT INTO Detalle(idComprobanteElectronico,idServicio) values (2,1);
 INSERT INTO Detalle(idComprobanteElectronico,idServicio) values (2,2);
 INSERT INTO Detalle(idComprobanteElectronico,idServicio) values (2,3);
-SELECT * FROM Detalle;
+select * from Cliente;
+/*SELECT nombreServicio,descripcion,foto,nombreTipoServicio,precio,nombreProfesional,apellidoProfesional,urlFoto,fecha,plataformaDePago
+FROM Detalle
+INNER JOIN ComprobanteElectronico ON Detalle.idComprobanteElectronico = ComprobanteElectronico.idComprobanteElectronico
+INNER JOIN */
 /* store procedures*/
 CREATE PROCEDURE SP_listar_comprobanteElectronico(
 _idCliente int
@@ -513,6 +517,7 @@ WHERE
     AND password = _password;
 CREATE PROCEDURE SP_listar_profesionales()
 SELECT
+idProfesional,
     DNI,
     nombreProfesional,
     apellidoProfesional,
