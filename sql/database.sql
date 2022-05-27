@@ -502,7 +502,9 @@ SELECT
     apellidoProfesional,
     correoProfesional,
     celularProfesional,
-    nombrePais
+    urlFoto,
+    nombrePais,
+    direccionDomicilio
 FROM
     Profesional
     INNER JOIN Pais on Profesional.idPais = Pais.idPais
