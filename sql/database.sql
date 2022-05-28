@@ -385,7 +385,13 @@ INNER JOIN MetodoPago ON ComprobanteElectronico.idMetodoPago = MetodoPago.idMeto
 */
 /*cliente*/
 /* store procedures*/
-
+CREATE PROCEDURE SP_agregar_compra(
+_fecha varchar(50),
+_idCliente int,
+_idMetodoPago int,
+_idServicio int
+)
+INSERT INTO ComprobanteElectronico(Fecha,estado,idCliente,idMetodoPago,idServicio) VALUES(_fecha,1,_idCliente,_idMetodoPago,_idServicio);
 CREATE PROCEDURE SP_listar_comprobanteElectronico(
 _idCliente int)
 SELECT idComprobanteElectronico,fecha,plataformaDePago,idTipoServicio,NombreServicio FROM ComprobanteElectronico

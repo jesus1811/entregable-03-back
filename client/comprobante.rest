@@ -3,3 +3,14 @@ GET http://localhost:3001/api/comprobantes/1
 
 ### lista el detalle de un comprobante segun su id
 GET http://localhost:3001/api/comprobante/3
+
+### agrega una compra
+POST http://localhost:3001/api/comprobante
+Content-Type: application/json
+
+{
+    "fecha":"28-05-26",
+    "idCliente":1, 
+    "idMetodo":1,
+    "idServicio":5
+}
