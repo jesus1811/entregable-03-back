@@ -350,6 +350,8 @@ VALUES
 ("Curso de Administración","En este curso de administración aprenderás a llevar a cabo la planeación, organización, dirección y control de los recursos de una empresa; mediante el estudio del liderazgo y la gestión administrativa, logística y financiera.", 3, 53, 4, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/administracion.png?alt=media&token=98bbbe87-741a-459d-9737-70c2b2eba840", 1);
 INSERT INTO Cliente(DNI,nombreCliente,apellidoCliente,correoCliente,passwordCliente,celularCliente,urlFoto,estado) values(
 "74434089","Jesus","Ayarza","jayarza1811@gmail.com","123456","936129604","https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/jesudevImage.jpg?alt=media&token=449b3048-6b97-42b5-8436-9f926747cc05",1);
+INSERT INTO Cliente(DNI,nombreCliente,apellidoCliente,correoCliente,passwordCliente,celularCliente,urlFoto,estado) values(
+"72030566","Cristina","Advincola","cris@gmail.com","123456","960433408","https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/IMG_20220307_160635_107.webp?alt=media&token=449b3048-6b97-42b5-8436-9f926747cc05",1);
 
 
 INSERT INTO MetodoPago(plataformaDePago) values ("Yape");
@@ -391,11 +393,12 @@ INNER JOIN MetodoPago ON ComprobanteElectronico.idMetodoPago = MetodoPago.idMeto
 INNER JOIN Servicio ON ComprobanteElectronico.idServicio = Servicio.idServicio WHERE idCliente = _idCliente;
 CREATE PROCEDURE SP_listar_comprobanteElectronicobyId(
 _idComprobanteElectronico int)
-SELECT idComprobanteElectronico,fecha,plataformaDePago,nombreTipoServicio,NombreServicio,descripcion,precio,foto,Profesional.idProfesional,nombreProfesional,apellidoProfesional,urlFoto FROM ComprobanteElectronico
+SELECT idComprobanteElectronico,fecha,plataformaDePago,nombreTipoServicio,NombreServicio,descripcion,precio,foto,Profesional.idProfesional,nombreProfesional,apellidoProfesional,direccionDomicilio,celularProfesional,Profesional.urlFoto as fotoProfesional,Cliente.idCliente,nombreCliente,apellidoCliente,celularCliente,Cliente.urlFoto FROM ComprobanteElectronico
 INNER JOIN MetodoPago ON ComprobanteElectronico.idMetodoPago = MetodoPago.idMetodoPago
 INNER JOIN Servicio ON ComprobanteElectronico.idServicio = Servicio.idServicio
 INNER JOIN TipoServicio ON Servicio.idTipoServicio = TipoServicio.idTipoServicio
 INNER JOIN Profesional ON Servicio.idProfesional = Profesional.idProfesional
+INNER JOIN Cliente ON ComprobanteElectronico.idCliente = Cliente.idCliente
  WHERE idComprobanteElectronico = _idComprobanteElectronico;
 
 CREATE PROCEDURE SP_editar_Profesional(
