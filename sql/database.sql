@@ -64,9 +64,11 @@ CREATE TABLE ComprobanteElectronico(
     idCliente int,
     foreign key (idCliente) references Cliente(idCliente),
     idMetodoPago int,
-    foreign key (idMetodoPago) references MetodoPago(idMetodoPago)
+    foreign key (idMetodoPago) references MetodoPago(idMetodoPago),
+    idServicio int,
+    foreign key(idServicio) references Servicio(idServicio)
 );
-
+/*
 CREATE TABLE Detalle(
     idDetalleVenta int primary key auto_increment,
     idComprobanteElectronico int,
@@ -74,7 +76,7 @@ CREATE TABLE Detalle(
     idServicio int,
     foreign key (idServicio) references Servicio(idServicio)
 );
-
+*/
 /*datos predeterminados*/
 INSERT INTO
     TipoServicio(nombreTipoServicio, urlServicio)
@@ -349,8 +351,15 @@ VALUES
 INSERT INTO Cliente(DNI,nombreCliente,apellidoCliente,correoCliente,passwordCliente,celularCliente,urlFoto,estado) values(
 "74434089","Jesus","Ayarza","jayarza1811@gmail.com","123456","936129604","https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/jesudevImage.jpg?alt=media&token=449b3048-6b97-42b5-8436-9f926747cc05",1);
 
+
 INSERT INTO MetodoPago(plataformaDePago) values ("Yape");
 INSERT INTO MetodoPago(plataformaDePago) values ("Plin");
+
+INSERT INTO ComprobanteElectronico(Fecha,estado,idCliente,idMetodoPago,idServicio) VALUES("2022-05-26",1,1,1,1);
+INSERT INTO ComprobanteElectronico(Fecha,estado,idCliente,idMetodoPago,idServicio) VALUES("2022-05-26",1,1,2,6);
+INSERT INTO ComprobanteElectronico(Fecha,estado,idCliente,idMetodoPago,idServicio) VALUES("2022-05-26",1,1,2,4);
+
+/*
 INSERT INTO ComprobanteElectronico(fecha,estado,idCliente,idMetodoPago) values("2022-05-26",1,1,1);
 INSERT INTO ComprobanteElectronico(fecha,estado,idCliente,idMetodoPago) values("2022-05-26",1,1,2);
 INSERT INTO Detalle(idComprobanteElectronico,idServicio) values (1,7);
@@ -359,20 +368,36 @@ INSERT INTO Detalle(idComprobanteElectronico,idServicio) values (1,1);
 INSERT INTO Detalle(idComprobanteElectronico,idServicio) values (2,1);
 INSERT INTO Detalle(idComprobanteElectronico,idServicio) values (2,2);
 INSERT INTO Detalle(idComprobanteElectronico,idServicio) values (2,3);
-select * from Cliente;
+*/
 /*SELECT nombreServicio,descripcion,foto,nombreTipoServicio,precio,nombreProfesional,apellidoProfesional,urlFoto,fecha,plataformaDePago
 FROM Detalle
 INNER JOIN ComprobanteElectronico ON Detalle.idComprobanteElectronico = ComprobanteElectronico.idComprobanteElectronico
 INNER JOIN */
-/* store procedures*/
+/*
 CREATE PROCEDURE SP_listar_comprobanteElectronico(
 _idCliente int
 )
 SELECT idComprobanteElectronico,fecha,Cliente.idCliente,nombreCliente,apellidoCliente,plataformaDePago FROM ComprobanteElectronico
 INNER JOIN Cliente ON ComprobanteElectronico.idCliente = Cliente.idCliente
 INNER JOIN MetodoPago ON ComprobanteElectronico.idMetodoPago = MetodoPago.idMetodoPago WHERE ComprobanteElectronico.estado = 1 and Cliente.idCliente=_idCliente;
-
+*/
 /*cliente*/
+/* store procedures*/
+
+CREATE PROCEDURE SP_listar_comprobanteElectronico(
+_idCliente int)
+SELECT idComprobanteElectronico,fecha,plataformaDePago,idTipoServicio,NombreServicio FROM ComprobanteElectronico
+INNER JOIN MetodoPago ON ComprobanteElectronico.idMetodoPago = MetodoPago.idMetodoPago
+INNER JOIN Servicio ON ComprobanteElectronico.idServicio = Servicio.idServicio WHERE idCliente = _idCliente;
+CREATE PROCEDURE SP_listar_comprobanteElectronicobyId(
+_idComprobanteElectronico int)
+SELECT idComprobanteElectronico,fecha,plataformaDePago,nombreTipoServicio,NombreServicio,descripcion,precio,foto,Profesional.idProfesional,nombreProfesional,apellidoProfesional,urlFoto FROM ComprobanteElectronico
+INNER JOIN MetodoPago ON ComprobanteElectronico.idMetodoPago = MetodoPago.idMetodoPago
+INNER JOIN Servicio ON ComprobanteElectronico.idServicio = Servicio.idServicio
+INNER JOIN TipoServicio ON Servicio.idTipoServicio = TipoServicio.idTipoServicio
+INNER JOIN Profesional ON Servicio.idProfesional = Profesional.idProfesional
+ WHERE idComprobanteElectronico = _idComprobanteElectronico;
+
 CREATE PROCEDURE SP_editar_Profesional(
     _idProfesional int,
     _nombreProfesional varchar(50),
@@ -636,11 +661,4 @@ SELECT
     *
 from
     TipoServicio;
-/*CREATE PROCEDURE SP_agregar_compra(
-_fecha varchar(50),
-_idCliente int,
-idMetodoPago int
-)
-INSERT INTO ComprobanteElectronico(fecha,estado,idCliente,idMetodoPago) values()
-*/
 SELECT * FROM Cliente;
