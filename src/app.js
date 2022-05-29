@@ -6,6 +6,7 @@ import servicio from "./routers/servicio.js";
 import tipoServicio from "./routers/tipoServicio.js";
 import profesional from "./routers/profesional.js";
 import comprobante from "./routers/comprobante.js";
+import pais from "./routers/pais.js";
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -15,6 +16,7 @@ app.use(servicio);
 app.use(tipoServicio);
 app.use(profesional);
 app.use(comprobante);
+app.use(pais);
 
 app.get("/", (req, res) => {
   res.json("hello word");
