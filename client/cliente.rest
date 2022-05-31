@@ -32,3 +32,6 @@ Content-Type: application/json
     "password":"cambio",
     "celular":"123456789"
 }
+
+### lista los cliente de un profesional
+GET http://localhost:3001/api/clienteForProfesional/4

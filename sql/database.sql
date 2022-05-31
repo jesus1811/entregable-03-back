@@ -357,10 +357,6 @@ INSERT INTO Cliente(DNI,nombreCliente,apellidoCliente,correoCliente,passwordClie
 INSERT INTO MetodoPago(plataformaDePago) values ("Yape");
 INSERT INTO MetodoPago(plataformaDePago) values ("Plin");
 
-INSERT INTO ComprobanteElectronico(Fecha,estado,idCliente,idMetodoPago,idServicio) VALUES("2022-05-26",1,1,1,1);
-INSERT INTO ComprobanteElectronico(Fecha,estado,idCliente,idMetodoPago,idServicio) VALUES("2022-05-26",1,1,2,6);
-INSERT INTO ComprobanteElectronico(Fecha,estado,idCliente,idMetodoPago,idServicio) VALUES("2022-05-26",1,1,2,4);
-
 /*
 INSERT INTO ComprobanteElectronico(fecha,estado,idCliente,idMetodoPago) values("2022-05-26",1,1,1);
 INSERT INTO ComprobanteElectronico(fecha,estado,idCliente,idMetodoPago) values("2022-05-26",1,1,2);
@@ -670,4 +666,12 @@ SELECT
     *
 from
     TipoServicio;
-SELECT * FROM Cliente;
+CREATE PROCEDURE SP_listar_paises()
+SELECT * FROM Pais;
+CREATE PROCEDURE SP_listar_clienteForProfesional(
+_idProfesional int)
+SELECT DISTINCT Cliente.idCliente,Cliente.DNI,nombreCliente,apellidoCliente FROM ComprobanteElectronico
+INNER JOIN Cliente ON ComprobanteElectronico.idCliente = Cliente.idCliente
+INNER JOIN Servicio ON ComprobanteElectronico.idServicio = Servicio.idServicio
+INNER JOIN Profesional ON Servicio.idProfesional = Profesional.idProfesional
+WHERE Profesional.idProfesional = _idProfesional;
