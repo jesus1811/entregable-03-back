@@ -670,8 +670,8 @@ CREATE PROCEDURE SP_listar_paises()
 SELECT * FROM Pais;
 CREATE PROCEDURE SP_listar_clienteForProfesional(
 _idProfesional int)
-SELECT DISTINCT Cliente.idCliente,Cliente.DNI,nombreCliente,apellidoCliente FROM ComprobanteElectronico
+SELECT DISTINCT Cliente.idCliente,Cliente.urlFoto,nombreCliente,apellidoCliente FROM ComprobanteElectronico
 INNER JOIN Cliente ON ComprobanteElectronico.idCliente = Cliente.idCliente
 INNER JOIN Servicio ON ComprobanteElectronico.idServicio = Servicio.idServicio
 INNER JOIN Profesional ON Servicio.idProfesional = Profesional.idProfesional
-WHERE Profesional.idProfesional = _idProfesional;
+WHERE Profesional.idProfesional =_idProfesional;
