@@ -54,6 +54,7 @@ CREATE TABLE Servicio (
     idProfesional int,
     foreign key(idProfesional) references Profesional(idProfesional),
     foto varchar(500),
+    descuento float,
     estado int
 );
 
@@ -348,8 +349,8 @@ INSERT INTO
     )
 VALUES
 ("Curso de Administración","En este curso de administración aprenderás a llevar a cabo la planeación, organización, dirección y control de los recursos de una empresa; mediante el estudio del liderazgo y la gestión administrativa, logística y financiera.", 3, 53, 4, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/administracion.png?alt=media&token=98bbbe87-741a-459d-9737-70c2b2eba840", 1);
-INSERT INTO Cliente(DNI,nombreCliente,apellidoCliente,correoCliente,passwordCliente,celularCliente,urlFoto,estado) values(
-"74434089","Jesus","Ayarza","jayarza1811@gmail.com","123456","936129604","https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/jesudevImage.jpg?alt=media&token=449b3048-6b97-42b5-8436-9f926747cc05",1);
+INSERT INTO Cliente(DNI,nombreCliente,apellidoCliente,correoCliente,passwordCliente,celularCliente,urlFoto,descuento,estado) values(
+"74434089","Jesus","Ayarza","jayarza1811@gmail.com","123456","936129604","https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/jesudevImage.jpg?alt=media&token=449b3048-6b97-42b5-8436-9f926747cc05",0,1);
 INSERT INTO Cliente(DNI,nombreCliente,apellidoCliente,correoCliente,passwordCliente,celularCliente,urlFoto,estado) values(
 "72030566","Cristina","Advincola","cris@gmail.com","123456","960433408","https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/IMG_20220307_160635_107.webp?alt=media&token=449b3048-6b97-42b5-8436-9f926747cc05",1);
 
