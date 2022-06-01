@@ -4,8 +4,13 @@ USE b8tnmbvalnva3ejnhh47;
 CREATE TABLE Pais (
     idPais int primary key auto_increment,
     nombrePais varchar(50)
+);	
+CREATE TABLE Valoracion(
+idValoracion int primary key auto_increment,
+comentario varchar(255),
+idServicio int,
+idCliente int
 );
-
 CREATE TABLE Cliente(
     idCliente int primary key auto_increment,
     DNI varchar(8),
@@ -287,7 +292,7 @@ INSERT INTO
         estado
     )
 VALUES
-("Capacitación de redes","Este curso de redes está dirigido a personas que posean o no conocimientos de informática pero que deseen adquirir conocimientos en el área de: diseño, instalación, configuración y solución de problemas de redes informáticas", 2, 30, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/redes.jpg?alt=media&token=f14d176d-27d6-4a56-a05d-cde08c45780f",0, 1);
+("Capacitación de redes","Este curso de redes está dirigido a personas que posean o no conocimientos de informática pero que deseen adquirir conocimientos en el área de: diseño, instalación, configuración y solución de problemas de redes informáticas", 2, 30, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/redes.jpg?alt=media&token=f14d176d-27d6-4a56-a05d-cde08c45780f",10, 1);
 
 INSERT INTO
     Servicio(
@@ -367,6 +372,12 @@ INSERT INTO Cliente(DNI,nombreCliente,apellidoCliente,correoCliente,passwordClie
 INSERT INTO MetodoPago(plataformaDePago) values ("Yape");
 INSERT INTO MetodoPago(plataformaDePago) values ("Plin");
 
+INSERT INTO Valoracion(comentario,idServicio,idCliente) values("tu curso es bien feo por mi madre",1,2);
+INSERT INTO Valoracion(comentario,idServicio,idCliente) values("tu curso es buenoe",1,2);
+
+INSERT INTO Valoracion(comentario,idServicio,idCliente) values("hola",2,2);
+INSERT INTO Valoracion(comentario,idServicio,idCliente) values("mundo",2,2);
+
 /*
 INSERT INTO ComprobanteElectronico(fecha,estado,idCliente,idMetodoPago) values("2022-05-26",1,1,1);
 INSERT INTO ComprobanteElectronico(fecha,estado,idCliente,idMetodoPago) values("2022-05-26",1,1,2);
@@ -405,7 +416,7 @@ INNER JOIN MetodoPago ON ComprobanteElectronico.idMetodoPago = MetodoPago.idMeto
 INNER JOIN Servicio ON ComprobanteElectronico.idServicio = Servicio.idServicio WHERE idCliente = _idCliente;
 CREATE PROCEDURE SP_listar_comprobanteElectronicobyId(
 _idComprobanteElectronico int)
-SELECT idComprobanteElectronico,fecha,plataformaDePago,nombreTipoServicio,NombreServicio,descripcion,precio,foto,Profesional.idProfesional,nombreProfesional,apellidoProfesional,direccionDomicilio,celularProfesional,Profesional.urlFoto as fotoProfesional,Cliente.idCliente,nombreCliente,apellidoCliente,celularCliente,Cliente.urlFoto FROM ComprobanteElectronico
+SELECT idComprobanteElectronico,fecha,plataformaDePago,nombreTipoServicio,NombreServicio,descripcion,precio,descuento,foto,Profesional.idProfesional,nombreProfesional,apellidoProfesional,direccionDomicilio,celularProfesional,Profesional.urlFoto as fotoProfesional,Cliente.idCliente,nombreCliente,apellidoCliente,celularCliente,Cliente.urlFoto FROM ComprobanteElectronico
 INNER JOIN MetodoPago ON ComprobanteElectronico.idMetodoPago = MetodoPago.idMetodoPago
 INNER JOIN Servicio ON ComprobanteElectronico.idServicio = Servicio.idServicio
 INNER JOIN TipoServicio ON Servicio.idTipoServicio = TipoServicio.idTipoServicio
@@ -596,6 +607,7 @@ idServicio,
     descripcion,
     foto,
     precio,
+    descuento,
     Profesional.idProfesional,
     nombreProfesional,
     apellidoProfesional,
@@ -620,6 +632,7 @@ INSERT INTO
         descripcion,
         idTipoServicio,
         precio,
+        descuento,
         idProfesional,
         foto,
         estado
@@ -630,6 +643,7 @@ VALUES
         _descripcion,
         _idTipoServicio,
         _precio,
+        0,
         _idProfesional,
         _foto,
         1
@@ -663,6 +677,7 @@ idServicio,
     descripcion,
     foto,
     precio,
+    descuento,
     nombreProfesional,
     apellidoProfesional,
     nombrePais
@@ -698,3 +713,10 @@ _descuento float)
 update Servicio
 set NombreServicio=nombre,descripcion=descr, idTipoServicio=idtip, precio=prec, idProfesional=idpro, descuento=_descuento
 where idServicio=id;
+CREATE PROCEDURE SP_listar_valoracion(
+_idServicio int
+)
+SELECT idValoracion,comentario,Cliente.idCliente,nombreCliente,apellidoCliente from Valoracion
+INNER JOIN Servicio ON Servicio.idServicio = Valoracion.idServicio
+INNER JOIN Cliente ON Cliente.idCliente = Valoracion.idCliente
+ WHERE Servicio.idServicio= _idServicio;
