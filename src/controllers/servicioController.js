@@ -27,3 +27,14 @@ export const postServicio = (req, res) => {
     }
   );
 };
+export const putServicio = (req, res) => {
+  const { id } = req.params;
+  const { nombre, descripcion, tipo, precio, profesional, descuento } = req.body;
+  connection.query(
+    "CALL SP_editar_servicio(?,?,?,?,?,?,?)",
+    [id, nombre, descripcion, tipo, precio, profesional, descuento],
+    (err, rows) => {
+      rows ? res.json("Editado Correctamente") : res.json(err);
+    }
+  );
+};

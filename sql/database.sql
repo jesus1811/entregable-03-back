@@ -244,10 +244,11 @@ INSERT INTO
         precio,
         idProfesional,
         foto,
+        descuento,
         estado
     )
 VALUES
-("Terapia Reumatologíca","La Fisioterapia Traumatológica es una especialidad indicada para el tratamiento de las lesiones del sistema musculo esquelético, óseo y ligamentoso de las diferentes partes del cuerpo humano.", 1, 55.5, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/reumatologia.png?alt=media&token=66db304e-b3ed-42b2-b467-2ffb2595094e", 1);
+("Terapia Reumatologíca","La Fisioterapia Traumatológica es una especialidad indicada para el tratamiento de las lesiones del sistema musculo esquelético, óseo y ligamentoso de las diferentes partes del cuerpo humano.", 1, 55.5, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/reumatologia.png?alt=media&token=66db304e-b3ed-42b2-b467-2ffb2595094e",0, 1);
 INSERT INTO
     Servicio(
         NombreServicio,
@@ -256,10 +257,11 @@ INSERT INTO
         precio,
         idProfesional,
         foto,
+        descuento,
         estado
     )
 VALUES
-("Terapia Dermatológica","Estos tratamientos están enfocados a rejuvenecer la piel, ya sea del rostro, el cuello, el escote o las manos. En función de las características y las necesidades de cada piel, desde el Centro Dermatológico", 1, 39, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/dermatologia.png?alt=media&token=0d3b85d0-af8a-4cc6-8e1a-d6a533b88a0c", 1);
+("Terapia Dermatológica","Estos tratamientos están enfocados a rejuvenecer la piel, ya sea del rostro, el cuello, el escote o las manos. En función de las características y las necesidades de cada piel, desde el Centro Dermatológico", 1, 39, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/dermatologia.png?alt=media&token=0d3b85d0-af8a-4cc6-8e1a-d6a533b88a0c",0, 1);
 INSERT INTO
     Servicio(
         NombreServicio,
@@ -268,10 +270,11 @@ INSERT INTO
         precio,
         idProfesional,
         foto,
+        descuento,
         estado
     )
 VALUES
-("Terapia Geriátrica","La rehabilitación geriátrica es el conjunto de actividades sociales encaminadas a buscar la mejor incorporación del anciano a la macrosociedad y microsociedad.", 1, 35, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/geriatrica.jpg?alt=media&token=45d731d2-1712-4ed6-adc0-d96917b48502", 1);
+("Terapia Geriátrica","La rehabilitación geriátrica es el conjunto de actividades sociales encaminadas a buscar la mejor incorporación del anciano a la macrosociedad y microsociedad.", 1, 35, 1, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/geriatrica.jpg?alt=media&token=45d731d2-1712-4ed6-adc0-d96917b48502",0, 1);
 INSERT INTO
     Servicio(
         NombreServicio,
@@ -280,10 +283,11 @@ INSERT INTO
         precio,
         idProfesional,
         foto,
+        descuento,
         estado
     )
 VALUES
-("Capacitación de redes","Este curso de redes está dirigido a personas que posean o no conocimientos de informática pero que deseen adquirir conocimientos en el área de: diseño, instalación, configuración y solución de problemas de redes informáticas", 2, 30, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/redes.jpg?alt=media&token=f14d176d-27d6-4a56-a05d-cde08c45780f", 1);
+("Capacitación de redes","Este curso de redes está dirigido a personas que posean o no conocimientos de informática pero que deseen adquirir conocimientos en el área de: diseño, instalación, configuración y solución de problemas de redes informáticas", 2, 30, 2, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/redes.jpg?alt=media&token=f14d176d-27d6-4a56-a05d-cde08c45780f",0, 1);
 
 INSERT INTO
     Servicio(
@@ -293,10 +297,11 @@ INSERT INTO
         precio,
         idProfesional,
         foto,
+        descuento,
         estado
     )
 VALUES
-("Capacitación de programación basica","La programación consiste en escribir lo que debe hacer la computadora para resolver un problema concreto utilizando un lenguaje de programación. En este apartado se introducen algunos conceptos básicos sobre los elementos que involucra la programación.", 2, 80, 3, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/programacion.jpg?alt=media&token=3e579c20-c93c-42ac-bd2f-df2c597cff55", 1);
+("Capacitación de programación basica","La programación consiste en escribir lo que debe hacer la computadora para resolver un problema concreto utilizando un lenguaje de programación. En este apartado se introducen algunos conceptos básicos sobre los elementos que involucra la programación.", 2, 80, 3, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/programacion.jpg?alt=media&token=3e579c20-c93c-42ac-bd2f-df2c597cff55",0, 1);
 
 INSERT INTO
     Servicio(
@@ -306,10 +311,11 @@ INSERT INTO
         precio,
         idProfesional,
         foto,
+        descuento,
         estado
     )
 VALUES
-("Capacitación de base de datos","En este curso de base de datos, aprenderás aplicar los procesos asociados a la creación, elaboración, gestión, automatización y clasificación de datos e información, haciendo uso de distintos sistemas informáticos.", 2, 90, 3, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/baseDeDatos.png?alt=media&token=de9421f0-e5b9-4270-922f-599e7837a87f", 1);
+("Capacitación de base de datos","En este curso de base de datos, aprenderás aplicar los procesos asociados a la creación, elaboración, gestión, automatización y clasificación de datos e información, haciendo uso de distintos sistemas informáticos.", 2, 90, 3, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/baseDeDatos.png?alt=media&token=de9421f0-e5b9-4270-922f-599e7837a87f",0, 1);
 
 INSERT INTO
     Servicio(
@@ -319,10 +325,11 @@ INSERT INTO
         precio,
         idProfesional,
         foto,
+        descuento,
         estado
     )
 VALUES
-("Curso de Marketing","El curso brinda conocimientos acerca de las estrategias de promoción de productos y/o servicios, el uso de plataformas y otros medios virtuales. Aprenderán a utilizar las herramientas digitales como medio de promoción de su propia actividad profesional.", 3, 50, 4, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/marketing.png?alt=media&token=897ca5b9-8a4b-4fb9-80cb-9e5758636c64", 1);
+("Curso de Marketing","El curso brinda conocimientos acerca de las estrategias de promoción de productos y/o servicios, el uso de plataformas y otros medios virtuales. Aprenderán a utilizar las herramientas digitales como medio de promoción de su propia actividad profesional.", 3, 50, 4, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/marketing.png?alt=media&token=897ca5b9-8a4b-4fb9-80cb-9e5758636c64",0, 1);
 
 INSERT INTO
     Servicio(
@@ -332,10 +339,11 @@ INSERT INTO
         precio,
         idProfesional,
         foto,
+        descuento,
         estado
     )
 VALUES
-("Curso Empresarial","Curso enfocados en personas interesadas en aprender sobre administración de empresas. También están enfocados en personas que ya se desempeñen en una organización y deseen aprender sobre gestión empresarial.", 3, 46, 4, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/empresarial.png?alt=media&token=00435b4d-229c-47e1-95bc-90c6d75e9e39", 1);
+("Curso Empresarial","Curso enfocados en personas interesadas en aprender sobre administración de empresas. También están enfocados en personas que ya se desempeñen en una organización y deseen aprender sobre gestión empresarial.", 3, 46, 4, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/empresarial.png?alt=media&token=00435b4d-229c-47e1-95bc-90c6d75e9e39",0, 1);
 
 INSERT INTO
     Servicio(
@@ -345,12 +353,13 @@ INSERT INTO
         precio,
         idProfesional,
         foto,
+        descuento,
         estado
     )
 VALUES
-("Curso de Administración","En este curso de administración aprenderás a llevar a cabo la planeación, organización, dirección y control de los recursos de una empresa; mediante el estudio del liderazgo y la gestión administrativa, logística y financiera.", 3, 53, 4, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/administracion.png?alt=media&token=98bbbe87-741a-459d-9737-70c2b2eba840", 1);
-INSERT INTO Cliente(DNI,nombreCliente,apellidoCliente,correoCliente,passwordCliente,celularCliente,urlFoto,descuento,estado) values(
-"74434089","Jesus","Ayarza","jayarza1811@gmail.com","123456","936129604","https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/jesudevImage.jpg?alt=media&token=449b3048-6b97-42b5-8436-9f926747cc05",0,1);
+("Curso de Administración","En este curso de administración aprenderás a llevar a cabo la planeación, organización, dirección y control de los recursos de una empresa; mediante el estudio del liderazgo y la gestión administrativa, logística y financiera.", 3, 53, 4, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/administracion.png?alt=media&token=98bbbe87-741a-459d-9737-70c2b2eba840",0, 1);
+INSERT INTO Cliente(DNI,nombreCliente,apellidoCliente,correoCliente,passwordCliente,celularCliente,urlFoto,estado) values(
+"74434089","Jesus","Ayarza","jayarza1811@gmail.com","123456","936129604","https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/jesudevImage.jpg?alt=media&token=449b3048-6b97-42b5-8436-9f926747cc05",1);
 INSERT INTO Cliente(DNI,nombreCliente,apellidoCliente,correoCliente,passwordCliente,celularCliente,urlFoto,estado) values(
 "72030566","Cristina","Advincola","cris@gmail.com","123456","960433408","https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/IMG_20220307_160635_107.webp?alt=media&token=449b3048-6b97-42b5-8436-9f926747cc05",1);
 
@@ -634,6 +643,7 @@ idServicio,
     descripcion,
     foto,
     precio,
+    descuento,
     Profesional.idProfesional,
     nombreProfesional,
     apellidoProfesional,
@@ -642,7 +652,7 @@ FROM
     Servicio
     INNER JOIN TipoServicio on Servicio.idTipoServicio = TipoServicio.idTipoServicio
     INNER JOIN Profesional on Servicio.idProfesional = Profesional.idProfesional
-    INNER JOIN Pais on Profesional.idPais = Pais.idPais where idServicio = _idServicio;
+    INNER JOIN Pais on Profesional.idPais = Pais.idPais where idServicio =_idServicio;
 CREATE PROCEDURE SP_listar_antecedentesServicios(
 _idProfesional int
 )
@@ -676,3 +686,15 @@ INNER JOIN Cliente ON ComprobanteElectronico.idCliente = Cliente.idCliente
 INNER JOIN Servicio ON ComprobanteElectronico.idServicio = Servicio.idServicio
 INNER JOIN Profesional ON Servicio.idProfesional = Profesional.idProfesional
 WHERE Profesional.idProfesional =_idProfesional;
+/* ...*/
+Create procedure SP_editar_servicio(
+id int,
+nombre varchar(50),
+descr varchar(500),
+idtip int,
+prec float,
+idpro int,
+_descuento float)
+update Servicio
+set NombreServicio=nombre,descripcion=descr, idTipoServicio=idtip, precio=prec, idProfesional=idpro, descuento=_descuento
+where idServicio=id;

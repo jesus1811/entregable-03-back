@@ -20,3 +20,15 @@ Content-Type: application/json
     "foto":"urlpruebaback"
 }
 
+### editar un servicio por su id
+PUT http://localhost:3001/api/servicio/1
+Content-Type: application/json
+
+{
+    "nombre":"Terapia Reumatologíca",
+    "descripcion":"La Fisioterapia Traumatológica es una especialidad indicada para el tratamiento de las lesiones del sistema musculo esquelético, óseo y ligamentoso de las diferentes partes del cuerpo humano.",
+    "tipo":1,
+    "precio":55.5,
+    "profesional":1,
+    "descuento":10
+}
