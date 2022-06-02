@@ -72,7 +72,8 @@ CREATE TABLE ComprobanteElectronico(
     idMetodoPago int,
     foreign key (idMetodoPago) references MetodoPago(idMetodoPago),
     idServicio int,
-    foreign key(idServicio) references Servicio(idServicio)
+    foreign key(idServicio) references Servicio(idServicio),
+    total float
 );
 /*
 CREATE TABLE Detalle(
@@ -406,9 +407,10 @@ CREATE PROCEDURE SP_agregar_compra(
 _fecha varchar(50),
 _idCliente int,
 _idMetodoPago int,
-_idServicio int
+_idServicio int,
+_total float
 )
-INSERT INTO ComprobanteElectronico(Fecha,estado,idCliente,idMetodoPago,idServicio) VALUES(_fecha,1,_idCliente,_idMetodoPago,_idServicio);
+INSERT INTO ComprobanteElectronico(Fecha,estado,idCliente,idMetodoPago,idServicio,total) VALUES(_fecha,1,_idCliente,_idMetodoPago,_idServicio,_total);
 CREATE PROCEDURE SP_listar_comprobanteElectronico(
 _idCliente int)
 SELECT idComprobanteElectronico,fecha,plataformaDePago,idTipoServicio,NombreServicio FROM ComprobanteElectronico
@@ -416,13 +418,13 @@ INNER JOIN MetodoPago ON ComprobanteElectronico.idMetodoPago = MetodoPago.idMeto
 INNER JOIN Servicio ON ComprobanteElectronico.idServicio = Servicio.idServicio WHERE idCliente = _idCliente;
 CREATE PROCEDURE SP_listar_comprobanteElectronicobyId(
 _idComprobanteElectronico int)
-SELECT idComprobanteElectronico,fecha,plataformaDePago,nombreTipoServicio,NombreServicio,descripcion,precio,descuento,foto,Profesional.idProfesional,nombreProfesional,apellidoProfesional,direccionDomicilio,celularProfesional,Profesional.urlFoto as fotoProfesional,Cliente.idCliente,nombreCliente,apellidoCliente,celularCliente,Cliente.urlFoto FROM ComprobanteElectronico
+SELECT idComprobanteElectronico,fecha,plataformaDePago,total,nombreTipoServicio,NombreServicio,descripcion,precio,descuento,foto,Profesional.idProfesional,nombreProfesional,apellidoProfesional,direccionDomicilio,celularProfesional,Profesional.urlFoto as fotoProfesional,Cliente.idCliente,nombreCliente,apellidoCliente,celularCliente,Cliente.urlFoto FROM ComprobanteElectronico
 INNER JOIN MetodoPago ON ComprobanteElectronico.idMetodoPago = MetodoPago.idMetodoPago
 INNER JOIN Servicio ON ComprobanteElectronico.idServicio = Servicio.idServicio
 INNER JOIN TipoServicio ON Servicio.idTipoServicio = TipoServicio.idTipoServicio
 INNER JOIN Profesional ON Servicio.idProfesional = Profesional.idProfesional
 INNER JOIN Cliente ON ComprobanteElectronico.idCliente = Cliente.idCliente
- WHERE idComprobanteElectronico = _idComprobanteElectronico;
+ WHERE idComprobanteElectronico =_idComprobanteElectronico;
 
 CREATE PROCEDURE SP_editar_Profesional(
     _idProfesional int,
@@ -719,3 +721,5 @@ SELECT idValoracion,comentario,Cliente.idCliente,nombreCliente,apellidoCliente f
 INNER JOIN Servicio ON Servicio.idServicio = Valoracion.idServicio
 INNER JOIN Cliente ON Cliente.idCliente = Valoracion.idCliente
  WHERE Servicio.idServicio= _idServicio;
+ 
+ SELECT * FROM ComprobanteElectronico;
