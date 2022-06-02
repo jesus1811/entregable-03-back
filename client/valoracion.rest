@@ -1,5 +1,5 @@
 ### agrega un comentario
-POSt http://localhost:3001/api/valoracion
+POST http://localhost:3001/api/valoracion
 Content-Type: application/json
 
 {
