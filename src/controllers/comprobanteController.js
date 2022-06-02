@@ -13,8 +13,12 @@ export const getComprobanteById = (req, res) => {
   });
 };
 export const postComprobante = (req, res) => {
-  const { fecha, idCliente, idMetodo, idServicio } = req.body;
-  connection.query("CALL SP_agregar_compra(?,?,?,?)", [fecha, idCliente, idMetodo, idServicio], (err, rows) => {
-    rows ? res.json("Compra Exitosa") : res.json(err);
-  });
+  const { fecha, idCliente, idMetodo, idServicio, total } = req.body;
+  connection.query(
+    "CALL SP_agregar_compra(?,?,?,?,?)",
+    [fecha, idCliente, idMetodo, idServicio, total],
+    (err, rows) => {
+      rows ? res.json("Compra Exitosa") : res.json(err);
+    }
+  );
 };

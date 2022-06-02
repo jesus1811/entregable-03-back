@@ -12,5 +12,6 @@ Content-Type: application/json
     "fecha":"28-05-26",
     "idCliente":1, 
     "idMetodo":1,
-    "idServicio":5
+    "idServicio":5,
+    "total":1000
 }
