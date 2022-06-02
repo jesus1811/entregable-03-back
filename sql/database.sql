@@ -728,7 +728,3 @@ INNER JOIN Cliente ON Cliente.idCliente = Valoracion.idCliente
  _idCliente int
  )
 INSERT INTO Valoracion(comentario,idServicio,idCliente) values(_comentario,_idServicio,_idCliente);
-
- 
- SELECT * FROM ComprobanteElectronico;
- SELECT * FROM Valoracion;
