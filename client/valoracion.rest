@@ -7,3 +7,6 @@ Content-Type: application/json
     "idServicio":1,
     "idCliente":1
 }
+
+### lista todas los comentarios de un servicio por id
+GET http://localhost:3001/api/valoraciones/3
