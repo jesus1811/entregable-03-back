@@ -717,9 +717,18 @@ CALL SP_editar_servicio(1,"Terapia Reumatologíca","La Fisioterapia Traumatológ
 CREATE PROCEDURE SP_listar_valoracion(
 _idServicio int
 )
-SELECT idValoracion,comentario,Cliente.idCliente,nombreCliente,apellidoCliente from Valoracion
+SELECT idValoracion,urlFoto,comentario,Cliente.idCliente,nombreCliente,apellidoCliente from Valoracion
 INNER JOIN Servicio ON Servicio.idServicio = Valoracion.idServicio
 INNER JOIN Cliente ON Cliente.idCliente = Valoracion.idCliente
- WHERE Servicio.idServicio= _idServicio;
+ WHERE Servicio.idServicio=_idServicio;
+ 
+ CREATE PROCEDURE SP_registrar_valoracion(
+ _comentario varchar(255),
+ _idServicio int,
+ _idCliente int
+ )
+INSERT INTO Valoracion(comentario,idServicio,idCliente) values(_comentario,_idServicio,_idCliente);
+
  
  SELECT * FROM ComprobanteElectronico;
+ SELECT * FROM Valoracion;

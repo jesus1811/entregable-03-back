@@ -1,0 +1,9 @@
+### agrega un comentario
+POSt http://localhost:3001/api/valoracion
+Content-Type: application/json
+
+{
+    "comentario":"prueba back",
+    "idServicio":1,
+    "idCliente":1
+}
