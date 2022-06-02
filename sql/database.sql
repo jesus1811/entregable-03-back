@@ -707,11 +707,11 @@ id int,
 nombre varchar(50),
 descr varchar(500),
 prec float,
-idpro int,
 _descuento float)
 update Servicio
-set NombreServicio=nombre,descripcion=descr, precio=prec, idProfesional=idpro, descuento=_descuento
+set NombreServicio=nombre,descripcion=descr, precio=prec, descuento=_descuento
 where idServicio=id;
+CALL SP_editar_servicio(1,"Terapia Reumatologíca","La Fisioterapia Traumatológica es una especialidad indicada para el tratamiento de las lesiones del sistema musculo esquelético, óseo y ligamentoso de las diferentes partes del cuerpo humano.",1000,20);
 CREATE PROCEDURE SP_listar_valoracion(
 _idServicio int
 )
