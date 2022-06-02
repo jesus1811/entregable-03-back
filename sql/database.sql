@@ -373,12 +373,6 @@ INSERT INTO Cliente(DNI,nombreCliente,apellidoCliente,correoCliente,passwordClie
 INSERT INTO MetodoPago(plataformaDePago) values ("Yape");
 INSERT INTO MetodoPago(plataformaDePago) values ("Plin");
 
-INSERT INTO Valoracion(comentario,idServicio,idCliente) values("tu curso es bien feo por mi madre",1,2);
-INSERT INTO Valoracion(comentario,idServicio,idCliente) values("tu curso es buenoe",1,2);
-
-INSERT INTO Valoracion(comentario,idServicio,idCliente) values("hola",2,2);
-INSERT INTO Valoracion(comentario,idServicio,idCliente) values("mundo",2,2);
-
 /*
 INSERT INTO ComprobanteElectronico(fecha,estado,idCliente,idMetodoPago) values("2022-05-26",1,1,1);
 INSERT INTO ComprobanteElectronico(fecha,estado,idCliente,idMetodoPago) values("2022-05-26",1,1,2);
