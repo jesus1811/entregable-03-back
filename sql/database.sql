@@ -706,12 +706,11 @@ Create procedure SP_editar_servicio(
 id int,
 nombre varchar(50),
 descr varchar(500),
-idtip int,
 prec float,
 idpro int,
 _descuento float)
 update Servicio
-set NombreServicio=nombre,descripcion=descr, idTipoServicio=idtip, precio=prec, idProfesional=idpro, descuento=_descuento
+set NombreServicio=nombre,descripcion=descr, precio=prec, idProfesional=idpro, descuento=_descuento
 where idServicio=id;
 CREATE PROCEDURE SP_listar_valoracion(
 _idServicio int
