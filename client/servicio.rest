@@ -30,3 +30,6 @@ Content-Type: application/json
     "precio":1,
     "descuento":20
 }
+
+### elimina un servicio por id
+DELETE http://localhost:3001/api/servicio/1

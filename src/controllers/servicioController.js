@@ -34,3 +34,9 @@ export const putServicio = (req, res) => {
     rows ? res.json("Editado Correctamente") : res.json(err);
   });
 };
+export const deleteServicio = (req, res) => {
+  const { id } = req.params;
+  connection.query("CALL SP_eliminar_servicio(?)", [id], (err, rows) => {
+    err ? res.json(err) : res.json("Servicio Eliminado");
+  });
+};

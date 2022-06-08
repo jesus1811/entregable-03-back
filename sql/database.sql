@@ -179,7 +179,7 @@ VALUES
         "46467843",
         "Estefany",
         "Rodriguez",
-        "estafany123@gmail.com",
+        "estefany123@gmail.com",
         "123456",
         "984564566",
         "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/estefany.jpg?alt=media&token=71bcc817-b93d-44d4-89d9-d99ad42c18f5",
@@ -365,7 +365,7 @@ INSERT INTO
 VALUES
 ("Curso de Administración","En este curso de administración aprenderás a llevar a cabo la planeación, organización, dirección y control de los recursos de una empresa; mediante el estudio del liderazgo y la gestión administrativa, logística y financiera.", 3, 53, 4, "https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/administracion.png?alt=media&token=98bbbe87-741a-459d-9737-70c2b2eba840",0, 1);
 INSERT INTO Cliente(DNI,nombreCliente,apellidoCliente,correoCliente,passwordCliente,celularCliente,urlFoto,estado) values(
-"74434089","Jesus","Ayarza","jayarza1811@gmail.com","123456","936129604","https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/jesudevImage.jpg?alt=media&token=449b3048-6b97-42b5-8436-9f926747cc05",1);
+"74434089","Jesus","Ayarza","jesus@gmail.com","123456","936129604","https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/jesudevImage.jpg?alt=media&token=449b3048-6b97-42b5-8436-9f926747cc05",1);
 INSERT INTO Cliente(DNI,nombreCliente,apellidoCliente,correoCliente,passwordCliente,celularCliente,urlFoto,estado) values(
 "72030566","Cristina","Advincola","cris@gmail.com","123456","960433408","https://firebasestorage.googleapis.com/v0/b/crud-image-1acb8.appspot.com/o/IMG_20220307_160635_107.webp?alt=media&token=449b3048-6b97-42b5-8436-9f926747cc05",1);
 
@@ -612,7 +612,7 @@ FROM
     Servicio
     INNER JOIN TipoServicio on Servicio.idTipoServicio = TipoServicio.idTipoServicio
     INNER JOIN Profesional on Servicio.idProfesional = Profesional.idProfesional
-    INNER JOIN Pais on Profesional.idPais = Pais.idPais;
+    INNER JOIN Pais on Profesional.idPais = Pais.idPais WHERE Servicio.estado = 1;
 
 CREATE PROCEDURE SP_registrar_servicio(
     _NombreServicio varchar(50),
@@ -662,7 +662,7 @@ FROM
     Servicio
     INNER JOIN TipoServicio on Servicio.idTipoServicio = TipoServicio.idTipoServicio
     INNER JOIN Profesional on Servicio.idProfesional = Profesional.idProfesional
-    INNER JOIN Pais on Profesional.idPais = Pais.idPais where idServicio =_idServicio;
+    INNER JOIN Pais on Profesional.idPais = Pais.idPais where idServicio =_idServicio and Servicio.estado = 1;
 CREATE PROCEDURE SP_listar_antecedentesServicios(
 _idProfesional int
 )
@@ -681,7 +681,7 @@ FROM
     Servicio
     INNER JOIN TipoServicio on Servicio.idTipoServicio = TipoServicio.idTipoServicio
     INNER JOIN Profesional on Servicio.idProfesional = Profesional.idProfesional
-    INNER JOIN Pais on Profesional.idPais = Pais.idPais WHERE Profesional.idProfesional =_idProfesional;
+    INNER JOIN Pais on Profesional.idPais = Pais.idPais WHERE Profesional.idProfesional =_idProfesional and Servicio.estado = 1;
 
 CREATE PROCEDURE SP_listar_tipoServicio()
 SELECT
@@ -707,7 +707,6 @@ _descuento float)
 update Servicio
 set NombreServicio=nombre,descripcion=descr, precio=prec, descuento=_descuento
 where idServicio=id;
-CALL SP_editar_servicio(1,"Terapia Reumatologíca","La Fisioterapia Traumatológica es una especialidad indicada para el tratamiento de las lesiones del sistema musculo esquelético, óseo y ligamentoso de las diferentes partes del cuerpo humano.",1000,20);
 CREATE PROCEDURE SP_listar_valoracion(
 _idServicio int
 )
@@ -722,3 +721,6 @@ INNER JOIN Cliente ON Cliente.idCliente = Valoracion.idCliente
  _idCliente int
  )
 INSERT INTO Valoracion(comentario,idServicio,idCliente) values(_comentario,_idServicio,_idCliente);
+CREATE PROCEDURE SP_eliminar_servicio(
+_idServicio int)
+UPDATE Servicio set estado=0 WHERE idServicio=_idServicio;

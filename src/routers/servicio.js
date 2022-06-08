@@ -1,5 +1,6 @@
 import { Router } from "express";
 import {
+  deleteServicio,
   getServicio,
   getServicioForProfesional,
   getServicios,
@@ -13,5 +14,6 @@ router.get("/api/servicio/:id", getServicio);
 router.get("/api/serviciosForProfesional/:idProfesional", getServicioForProfesional);
 router.post("/api/servicio", postServicio);
 router.put("/api/servicio/:id", putServicio);
+router.delete("/api/servicio/:id", deleteServicio);
 
 export default router;
