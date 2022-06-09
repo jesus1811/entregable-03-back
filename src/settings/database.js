@@ -1,11 +1,11 @@
-import { createConnection } from "mysql";
+import { createConnection } from "mysql2";
 
 const connection = createConnection({
-  host: "containers-us-west-40.railway.app",
+  host: "containers-us-west-69.railway.app",
   user: "root",
-  password: "czpX58wO1Ey7ySyMmVI1",
+  password: "iwX0LMbBav8DvM3cPWae",
   database: "railway",
-  port: 7069,
+  port: 6153,
 });
 connection.connect((err) => {
   if (err) throw err;
