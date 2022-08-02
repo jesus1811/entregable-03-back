@@ -3,7 +3,7 @@ import { createConnection } from "mysql2";
 const connection = createConnection({
   host: "containers-us-west-54.railway.app",
   user: "root",
-  password: "Ld16knZOyYN7ICv17gwB",
+  password: "irO8fUBJUF3Myx0oGWHN",
   database: "b8tnmbvalnva3ejnhh47",
   port: 7328,
 });
