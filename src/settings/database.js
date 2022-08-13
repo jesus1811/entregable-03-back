@@ -1,11 +1,11 @@
 import { createConnection } from "mysql2";
 
 const connection = createConnection({
-  host: "containers-us-west-54.railway.app",
-  user: "root",
-  password: "irO8fUBJUF3Myx0oGWHN",
+  host: "b8tnmbvalnva3ejnhh47-mysql.services.clever-cloud.com",
+  user: "uh2jyy14bev02m6e",
+  password: "CF5NfhRm6XjjZoqOQadt",
   database: "b8tnmbvalnva3ejnhh47",
-  port: 7328,
+  port: 3306,
 });
 connection.connect((err) => {
   if (err) throw err;
